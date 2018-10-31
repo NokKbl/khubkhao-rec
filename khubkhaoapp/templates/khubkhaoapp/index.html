@@ -1,0 +1,41 @@
+<h1>Food_tem_list</h1>
+{{title.get_average_price}}
+======================
+<ul>
+    <br>
+    {% for obj in query_one %}
+    {{obj}}
+    <br>
+    Price : {{obj.get_average_price}}
+    <br>
+    Image : {{obj.get_image_location}}
+    <br>
+    Category : {{obj.get_veggie}}
+    <br>
+    {% endfor %}
+    ---------------------
+    <br>
+
+    {% for obj in query_two %}
+    {{obj}}
+    <br>
+    {% endfor %}
+    ===============
+    <br>
+    {% for obj in query_four %}
+    {{obj}}
+    <br>
+    {% endfor %}
+    ====================
+    <br>
+    {% for obj in query_five %}
+    {{obj}}
+    <br>
+    {% endfor %}
+    <br>
+    <!-- {% for obj in query_two %}
+    {{obj}}
+    <br>
+    
+    {% endfor %}  -->
+</ul>
