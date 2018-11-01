@@ -49,9 +49,10 @@ class Food(models.Model):
     veggie = models.ManyToManyField(
         Veggie,
         verbose_name='Veggie Type',
+        blank=True,
     )
-    call = Veggie()
-    cat = Item()
+    # call = Veggie()
+    # cat = Item()
     def __str__(self):
         return self.food_name
     def get_average_price(self):
@@ -60,10 +61,10 @@ class Food(models.Model):
         return self.image_location
     def get_veggie(self):
         return self.veggie
-    def get_try(self):
-        return self.call
-    def get_cat(self):
-        return self.cat
+    # def get_try(self):
+    #     return self.call
+    # def get_cat(self):
+    #     return self.cat
 
 class Ingredient(models.Model):
     non_veg = models.ForeignKey(
