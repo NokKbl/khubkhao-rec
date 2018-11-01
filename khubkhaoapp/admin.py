@@ -13,12 +13,6 @@ class FoodAdmin(admin.ModelAdmin):
     ]
     inlines = [IngredientInline]
 
-# class VeggieAdmin(admin.ModelAdmin):
-#     fieldsets = [
-#         (None,          {'fields': ['veggie_name']}),
-#     ]
-#     inlines = [IngredientInline]
-
 admin.site.register(Food, FoodAdmin)
 admin.site.register(Veggie)
 admin.site.register(Item)

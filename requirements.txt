@@ -3,3 +3,4 @@ Django==2.1.2
 gunicorn==19.9.0
 django-bootstrap3==11.0.0
 psycopg2-binary
+python-decouple

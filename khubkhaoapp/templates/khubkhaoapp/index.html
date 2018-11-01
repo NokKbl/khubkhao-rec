@@ -9,9 +9,11 @@
 </head>
 
 <body style="background-color: #fff59d">
+    <!-- <body> -->
     {% csrf_token %}
     <div class="webpage">
         <div class="jumbotron" style="background-color: #ffba55; padding: 20px;">
+        <!-- <div class="jumbotron"> -->
             <div class="row align-items-center">
                 <div class="col-2">
                     <img src="static/khubkhaoapp/images/logo.png" width="100px" height="100px">
@@ -60,7 +62,7 @@
                                         <br>
                                     {% endfor %}
                                 </div>
-                                <button name="submit_btn" class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+                                <button name="submit_btn" class="btn btn-warning btn-lg btn-block" type="submit">Submit</button>
                                 <br>
                             </div>
                         </div>
@@ -76,13 +78,13 @@
                     {% for food in food_list %}
                     <div class="row" style="padding: 20px;">
                         <div class="col-4" style="text-align: right;">
-                            <img src="{{ food.get_image_location }}" width="200px" height="150px">
+                            <img src="{{ food.get_image_location }}" width="200px" height="150px" class="border border-warning rounded">
                         </div>
                         <div class="col-8" style="text-align: left;">
                             <h4>{{ food }}</h4>
                             <ul>
                                 <li><h6>Average Price: {{ food.get_average_price }}</h6></li>
-                                <li><h6>Categories: {{ food.get_categories }}</h6></li>
+                                <li><h6>Categories: {% for veg in food.veggie.all %} {% for item in veg.item_name.all %} {{ item }} {% endfor %} {% endfor %}</h6></li>
                                 <li><h6>Rate point: {{ food.get_rate }} /100</h6></li>
                             </ul>
                         </div>
